@@ -19,6 +19,7 @@
     "prettier-plugin-tailwindcss": "^0.1.5",
     "typescript": "^4.4.4",
     "vitawind": "^2.2.4",
-    "vite": "^2.7.2"
+    "vite": "^2.7.2",
+    "react-router-dom": "^6.14.2"
   }
 }
