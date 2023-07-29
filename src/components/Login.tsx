@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
 type Props = {}
 
 const Login = (props: Props) => {
+  const email = useRef()
+  const password = useRef()
+
+  console.log("env", import.meta.env.VITE_API_URL);
   return (
     <div>
       <div>
