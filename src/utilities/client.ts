@@ -36,13 +36,11 @@ export async function client(endpoint: Endpoint, { body, ...customConfig }: Conf
     let data
 
     try {
-        const response = await fetch(`${process.env.REACT_APP_API_URL}${endpoint}`, config)
+        const response = await fetch(`${import.meta.env.VITE_API_URL}${endpoint}`, config)
         data = await response.json()
-        if (response.ok) {
-            return data
-        }
-        throw new Error(response.statusText)
+        if (data) return console.log(data)
     } catch (err: any) {
+        console.log(err)
         return Promise.reject(err.message ? err.message : data)
     }
 }
