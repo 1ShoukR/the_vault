@@ -27,7 +27,7 @@ const Login: React.FC<Props> = (props) => {
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-gray-200">
-      <div className="w-full max-w-md space-y-8 rounded-xl bg-white p-6 shadow-md">
+      <div className="w-full max-w-md space-y-4 rounded-xl bg-white p-6 shadow-lg">
         <div className="text-center">
           <img
             className="mx-auto h-12 w-12 rounded-full object-cover"
