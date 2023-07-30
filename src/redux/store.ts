@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { counterSlice } from "./testReducer";
+import { userSlice } from "./userAccountSlice";
 
 export const store = configureStore({
   reducer: {
     testReducer: counterSlice.reducer,
+    userAuth: userSlice.reducer
     // posts: postsReducer,
     // comments: commentsReducer,
     // users: usersReducer,
