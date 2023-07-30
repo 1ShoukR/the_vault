@@ -2,6 +2,7 @@ import { CreateAccountInterface } from "../utilities/interfaces";
 import { AppDispatch } from "../redux/store";
 import { setTestData } from "../redux/testReducer";
 import { redirect } from "react-router-dom";
+import { setUser } from "../redux/userAccountSlice";
 
 
 export const sendCreateAccountInfo = async (event: React.FormEvent<HTMLFormElement>, formData: CreateAccountInterface, dispatch: AppDispatch) => {
@@ -15,8 +16,13 @@ export const sendCreateAccountInfo = async (event: React.FormEvent<HTMLFormEleme
       body: JSON.stringify(formData),
     });
     const data = await response.json();
-    if (data.status === 200) {
-        alert(data.message)
-        redirect("http://localhost:3000/login");
-    }    
+    try {
+      if (data.status === 200){
+        console.log(data)
+        dispatch(setUser(data));
+        return true; 
+      } 
+    } catch (error) {
+      return error
+    }
 }
